@@ -30,6 +30,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl.recovery \
+    bootctrl.tissot.recovery
+
+PRODUCT_VENDOR_PROPERTIES += ro.hardware.bootctrl=tissot
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)

@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-DEVICE_PATH := device/xiaomi/vince
+DEVICE_PATH := device/xiaomi/sakura
 
 # Architecture
 TARGET_BOARD_SUFFIX := _64

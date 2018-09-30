@@ -25,4 +25,4 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvi
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    device/xiaomi/vince/zImage-dtb:kernel
+    device/xiaomi/sakura/zImage-dtb:kernel

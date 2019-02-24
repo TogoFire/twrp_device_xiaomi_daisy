@@ -110,3 +110,7 @@ TW_H_OFFSET := -80
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := system/vendor
+
+# Recovery Installer
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := $(LOCAL_PATH)/installer

@@ -71,6 +71,9 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# System-as-root
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+
 # TWRP Configuration
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/twrp.fstab
 RECOVERY_SDCARD_ON_DATA := true
@@ -84,6 +87,7 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_NTFS_3G := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
+TW_USE_TOOLBOX := true
 
 # Disable Mouse Cursor
 TW_INPUT_BLACKLIST := "hbtp_vm"

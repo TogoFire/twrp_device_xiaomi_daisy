@@ -1,7 +1,7 @@
 # mount_point   fstype    device                                           flags
 /cache          ext4      /dev/block/bootdevice/by-name/cache              flags=display="Cache";wipeingui
 /boot           emmc      /dev/block/bootdevice/by-name/boot               flags=display="Boot"
-/system         ext4      /dev/block/bootdevice/by-name/system             flags=display="System";backup=1
+/system_root    ext4      /dev/block/bootdevice/by-name/system             flags=display="System";backup=1
 /system_image   emmc      /dev/block/bootdevice/by-name/system             flags=backup=1
 /vendor         ext4      /dev/block/bootdevice/by-name/vendor             flags=display="Vendor";backup=1;wipeingui
 /vendor_image   emmc      /dev/block/bootdevice/by-name/vendor             flags=display="Vendor (Image)";backup=0;flashimg

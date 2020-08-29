@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-DEVICE_PATH := device/xiaomi/sakura
+DEVICE_PATH := device/xiaomi/daisy
 
 # Architecture
 TARGET_BOARD_SUFFIX := _64
@@ -56,8 +56,8 @@ BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_VERSION := 4.9
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sakura
-TARGET_KERNEL_CONFIG := sakura_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/daisy
+TARGET_KERNEL_CONFIG := daisy_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
 # Crypto

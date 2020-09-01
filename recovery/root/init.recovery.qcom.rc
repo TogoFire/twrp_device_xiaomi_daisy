@@ -35,6 +35,9 @@ on fs
     chown system system /dev/ion
     install_keyring
 
+    start hwservicemanager
+    start servicemanager
+
 on init
     mkdir /system/bin
     mkdir /system/etc

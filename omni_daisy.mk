@@ -63,6 +63,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+    
+# Partitions (listed in the file) to be wiped under recovery.
+TARGET_RECOVERY_WIPE := \
+    device/xiaomi/daisy/recovery/root/etc/recovery.wipe
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_daisy

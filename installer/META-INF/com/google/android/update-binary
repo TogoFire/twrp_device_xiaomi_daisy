@@ -42,10 +42,11 @@ extract() {
 	unzip -o "$1" -d "$2" || abort "Failed to extract zip to $2!"
 }
 
-print "#########################################"
-print "#   TWRP installer for Xiaomi A2 Lite   #"
-print "#          made by 33bca @ XDA          #"
-print "#########################################"
+print "*****************************************"
+print "*   |TWRP Recovery Project installer|   *"
+print "*         |for Xiaomi A2 Lite|          *"
+print "*           |TogoFire @ XDA|            *"
+print "*****************************************"
 
 # Unpack the installer
 [ "$zip" ] && {

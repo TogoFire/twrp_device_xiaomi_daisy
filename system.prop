@@ -1,4 +1,10 @@
 #
+ro.product.brand=xiaomi
+ro.product.name=daisy
 ro.product.device=daisy
 ro.build.product=daisy
+ro.treble.enabled=true
+#
+ro.product.board=MSM8953
+ro.board.platform=msm8953
 #

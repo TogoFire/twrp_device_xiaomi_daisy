@@ -1,0 +1,1 @@
+allow init rootfs:lnk_file { setattr };

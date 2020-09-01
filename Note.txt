@@ -1,0 +1,127 @@
+# NOTE
+# By TogoFire @XDA
+
+# Annotations
+
+git clone https://github.com/akhilnarang/scripts && cd scripts && bash setup/android_build_env.sh
+git clone https://github.com/TeamWin/external_magisk-prebuilt.git -b master external/magisk-prebuilt
+
+*FOX:
+sudo apt update && sudo apt upgrade -y
+repo init -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+
+repo sync -j8 --force-sync
+
+source build/envsetup.sh && lunch omni_daisy-eng && mka recoveryimage
+source build/envsetup.sh && lunch omni_daisy-userdebug && mka recoveryimage
+
+*TWRP
+
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
+repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
+
+repo sync
+
+source build/envsetup.sh && lunch omni_daisy-eng && mka recoveryimage
+source build/envsetup.sh && lunch omni_daisy-userdebug && mka recoveryimage
+
+*Sources:
+https://gitlab.com/OrangeFox/Manifest
+https://gitlab.com/OrangeFox/vendor/recovery/-/blob/master/orangefox_build_vars.txt
+https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+https://github.com/SebaUbuntu/TWRP-device-tree-generator/wiki/3.-Build-TWRP-from-source
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+# Build FOX - BoadConfig
+FOX_USE_BASH_SHELL := 1
+FOX_ASH_IS_BASH := 1
+FOX_USE_NANO_EDITOR := 1
+OF_AB_DEVICE := 1
+OF_DISABLE_MIUI_SPECIFIC_FEATURES := 1
+LC_ALL := 1
+FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER := 1
+OF_USE_MAGISKBOOT_FOR_ALL_PATCHES= := 1
+OF_USE_MAGISKBOOT=:= 1
+FOX_USE_TAR_BINARY := 1
+FOX_USE_ZIP_BINARY := 1
+FOX_REPLACE_BUSYBOX_PS := 1
+ALLOW_MISSING_DEPENDENCIES := true
+#OF_DISABLE_DM_VERITY_FORCED_ENCRYPTION := "1"; # disabling dm-verity causes stability issues with some kernel 4.9 ROMs; but is needed for MIUI
+#OF_DISABLE_FORCED_ENCRYPTION := 1
+#FOX_RECOVERY_INSTALL_PARTITION := /dev/block/platform/msm_sdcc.1/by-name/recovery
+#OF_VANILLA_BUILD := 1
+#OF_SKIP_ORANGEFOX_PROCESS := 1
+#OF_DONT_PATCH_ON_FRESH_INSTALLATION := 1
+#OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI := "1"
+#OF_NO_MIUI_OTA_VENDOR_BACKUP := "1"
+#OF_NO_TREBLE_COMPATIBILITY_CHECK := "1"
+#OF_FBE_METADATA_MOUNT_IGNORE := 1
+#FOX_BUILD_FULL_KERNEL_SOURCES := 1
+#FOX_USE_LZMA_COMPRESSION := 1
+   	
+# MAINTAINER
+FOX_BUILD_TYPE := Stable
+OF_MAINTAINER := TogoFire
+FOX_VERSION := NYA!-r11
+
+# OTA for custom ROMs
+OF_SUPPORT_ALL_BLOCK_OTA_UPDATES := 1
+OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR := 1
+
+# use system (ROM) fingerprint where available
+OF_USE_SYSTEM_FINGERPRINT := 1
+
+# -- add settings for R11 --
+FOX_R11 := 1
+FOX_ADVANCED_SECURITY := 1
+OF_USE_TWRP_SAR_DETECT := 1
+#OF_DISABLE_MIUI_OTA_BY_DEFAULT := 1
+#exporOF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
+# -- end R11 settings --
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+########MY SETUP##########
+nano ~/.bashrc
+source ~/.bashrc
+
+#nano ~/.bashrc > vendorsetup.sh
+
+# /usr/bin/ccache -M 50G
+ccache -M 50G
+
+export USE_CCACHE=1
+export KBUILD_BUILD_USER=TogoFire
+export KBUILD_BUILD_HOST=mint-os
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8G"
+export OUT_DIR=/out
+export SELINUX_IGNORE_NEVERALLOWS=true
+export USE_NINJA=false
+
+#FOR BUILD TWRP FOX
+export FOX_USE_BASH_SHELL=1
+export FOX_ASH_IS_BASH=1
+export FOX_USE_NANO_EDITOR=1
+export OF_AB_DEVICE=1
+export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
+export LC_ALL=1
+export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES="1"
+export OF_USE_MAGISKBOOT="1"
+export ALLOW_MISSING_DEPENDENCIES=true
+export FOX_BUILD_TYPE=Stable
+export OF_MAINTAINER=TogoFire
+export FOX_VERSION=NYA!-r11
+export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
+export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
+export OF_USE_SYSTEM_FINGERPRINT=1
+export FOX_R11=1
+export FOX_ADVANCED_SECURITY=1
+export OF_USE_TWRP_SAR_DETECT=1

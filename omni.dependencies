@@ -1,8 +1,14 @@
 [
   {
-    "remote":"Backup-Gits",
+    "remote":"omnirom",
     "repository": "android_vendor_qcom_opensource_commonsys",
     "target_path": "vendor/qcom/opensource/commonsys",
-    "revision":"android-10.0"
+    "revision":"android-9.0"
+  },
+ {
+    "remote":"TeamWin",
+    "repository": "external_magisk-prebuilt",
+    "target_path": "external/magisk-prebuilt",
+    "revision":"master"
   }
 ]

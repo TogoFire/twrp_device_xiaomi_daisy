@@ -202,3 +202,7 @@ OF_USE_TWRP_SAR_DETECT := 1
 #OF_DISABLE_MIUI_OTA_BY_DEFAULT := 1
 #exporOF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
 # -- end R11 settings --
+
+#Rounded corners
+OF_STATUS_INDENT_LEFT := 48
+OF_STATUS_INDENT_RIGHT := 48

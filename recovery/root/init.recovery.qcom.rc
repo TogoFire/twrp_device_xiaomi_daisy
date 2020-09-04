@@ -40,6 +40,18 @@ on fs
 on boot
     setprop sys.usb.config none
     setprop sys.usb.config adb
+    # DT2W Node
+    chown system system /proc/touchpanel/wakeup_gesture
+    chmod 0660 /proc/touchpanel/wakeup_gesture
+    write /proc/touchpanel/wakeup_gesture 1
+    # Synaptics DSX RMI Node
+    chown system system /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture
+    chmod 0644 /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture
+    write /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture 1
+    # DT2W Node tp_wakeup_gesture
+    chown system system /proc/tp_wakeup_gesture
+    chmod 0660 /proc/tp_wakeup_gesture
+    write /proc/tp_wakeup_gesture 1
 
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
@@ -62,7 +74,7 @@ on property:ro.crypto.fs_crypto_blkdev=* && property:ro.crypto.type=block
     stop sbinqseecomd
     stop keymaster-3-0
 
-on property:twrp.all.users.decrypted=true 
+on property:twrp.all.users.decrypted=true
     setprop crypto.ready 0
     stop sbinqseecomd
     stop keymaster-3-0

@@ -1,2 +1,5 @@
 allow init kernel:security { setcheckreqprot };
 allow init kernel:system { module_request };
+
+# DT2W
+allow init sysfs:file { setattr write open };

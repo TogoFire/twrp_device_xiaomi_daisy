@@ -96,6 +96,14 @@ service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
 
 on boot
     setprop sys.usb.config adb
+    # DT2W Node
+    chown system system /proc/touchpanel/wakeup_gesture
+    chmod 0660 /proc/touchpanel/wakeup_gesture
+    write /proc/touchpanel/wakeup_gesture 1
+    # Synaptics DSX RMI Node
+    chown system system /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture
+    chmod 0644 /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture
+    write /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture 1
 
 on property:crypto.ready=0
     stop sbinqseecomd

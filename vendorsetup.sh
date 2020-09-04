@@ -69,6 +69,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_STATUS_INDENT_LEFT=48
 	export OF_STATUS_INDENT_RIGHT=48
 
+	# Screen
+	export OF_SCREEN_H=2280
+
 	# -- add settings for R11 --
 	export FOX_R11=1
 	export FOX_ADVANCED_SECURITY=1

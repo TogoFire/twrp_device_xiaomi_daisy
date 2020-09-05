@@ -56,14 +56,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# MAINTAINER
 	export FOX_BUILD_TYPE=Stable
 	export OF_MAINTAINER=TogoFire
-	export FOX_VERSION=NYA!-r11
+	#export FOX_VERSION=R11
 
 	# OTA for custom ROMs
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 	
 	# use system (ROM) fingerprint where available
-	export OF_USE_SYSTEM_FINGERPRINT=1
+	#export OF_USE_SYSTEM_FINGERPRINT=1
 
 	#Rounded corners
 	export OF_STATUS_INDENT_LEFT=48

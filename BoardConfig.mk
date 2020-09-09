@@ -185,9 +185,9 @@ FOX_REPLACE_BUSYBOX_PS := 1
 #FOX_USE_LZMA_COMPRESSION := 1
    	
 # MAINTAINER
-FOX_BUILD_TYPE := Stable
+#FOX_BUILD_TYPE := Stable
 OF_MAINTAINER := TogoFire
-#FOX_VERSION := R11
+#FOX_VERSION := R11.0
 
 # OTA for custom ROMs
 OF_SUPPORT_ALL_BLOCK_OTA_UPDATES := 1
@@ -204,9 +204,15 @@ OF_USE_TWRP_SAR_DETECT := 1
 #exporOF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
 # -- end R11 settings --
 
-#Rounded corners
+# Rounded corners
 OF_STATUS_INDENT_LEFT := 48
 OF_STATUS_INDENT_RIGHT := 48
 
-#Screen
+# Screen
 OF_SCREEN_H := 2280
+
+# CLOCK
+OF_CLOCK_POS := 1
+
+# Status
+OF_STATUS_H := 95

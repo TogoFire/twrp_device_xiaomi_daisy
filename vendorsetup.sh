@@ -54,9 +54,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	#export TW_DEFAULT_LANGUAGE="en"
    	
 	# MAINTAINER
-	export FOX_BUILD_TYPE=Stable
+	#export FOX_BUILD_TYPE=Stable
 	export OF_MAINTAINER=TogoFire
-	#export FOX_VERSION=R11
+	#export FOX_VERSION=R11.0
 
 	# OTA for custom ROMs
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
@@ -65,12 +65,18 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# use system (ROM) fingerprint where available
 	#export OF_USE_SYSTEM_FINGERPRINT=1
 
-	#Rounded corners
+	# Rounded corners
 	export OF_STATUS_INDENT_LEFT=48
 	export OF_STATUS_INDENT_RIGHT=48
 
 	# Screen
 	export OF_SCREEN_H=2280
+
+	# CLOCK
+	export OF_CLOCK_POS=1
+
+	# Status
+	export OF_STATUS_H=95
 
 	# -- add settings for R11 --
 	export FOX_R11=1

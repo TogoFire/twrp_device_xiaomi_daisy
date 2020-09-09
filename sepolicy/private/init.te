@@ -3,3 +3,6 @@ allow init kernel:system { module_request };
 
 # DT2W
 allow init sysfs:file { setattr write open };
+
+# usb
+allow init functionfs:dir { mounton };

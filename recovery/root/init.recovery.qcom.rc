@@ -104,6 +104,10 @@ on boot
     chown system system /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture
     chmod 0644 /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture
     write /sys/devices/platform/soc/78b7000.i2c/i2c-3/3-0038/wakeup_gesture 1
+    # DT2W Node tp_wakeup_gesture
+    chown system system /proc/tp_wakeup_gesture
+    chmod 0660 /proc/tp_wakeup_gesture
+    write /proc/tp_wakeup_gesture 1
 
 on property:crypto.ready=0
     stop sbinqseecomd

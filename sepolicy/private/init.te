@@ -6,3 +6,6 @@ allow init sysfs:file { setattr write open };
 
 # usb
 allow init functionfs:dir { mounton };
+
+#DT2W 3.18
+allow init proc:file { setattr write open };

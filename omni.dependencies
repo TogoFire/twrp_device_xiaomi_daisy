@@ -4,5 +4,11 @@
     "repository":  "android_device_qcom_common",
     "target_path": "device/qcom/common",
     "revision":    "android-9.0"
+  },
+  {
+    "remote":      "github",
+    "repository":  "LinkBoi00/twrp_portrait_hdpi_daisy",
+    "target_path": "bootable/recovery/gui/theme/portrait_hdpi_daisy",
+    "revision":    "master"
   }
 ]

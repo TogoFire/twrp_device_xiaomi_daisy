@@ -19,10 +19,11 @@ BOOTMODE=false;
 ps | grep zygote | grep -v grep >/dev/null && BOOTMODE=true;
 $BOOTMODE || ps -A 2>/dev/null | grep zygote | grep -v grep >/dev/null && BOOTMODE=true;
 
-ui_print "#########################################";
-ui_print "#  Team Win Recovery Project Installer  #";
-ui_print "#         for Xiaomi Mi A2 Lite         #";
-ui_print "#########################################";
+ui_print "*************************************";
+ui_print "*** |OrangeFox Recovery Project|  ***";
+ui_print "***    |for Xiaomi Mi A2 Lite|    ***";
+ui_print "*************************************";
+ui_print " "
 
 # /dev/tmp is safe for both booted and recovery installs
 tmp=/dev/tmp/twrp-install;

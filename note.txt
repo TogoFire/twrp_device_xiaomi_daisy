@@ -1,0 +1,75 @@
+# NOTE
+# By TogoFire @XDA
+#
+# Annotations
+#
+
+git clone https://github.com/akhilnarang/scripts && cd scripts && bash setup/android_build_env.sh
+git clone https://github.com/TeamWin/external_magisk-prebuilt.git -b master external/magisk-prebuilt
+
+Optional:
+git clone https://github.com/TeamWin/android_device_qcom_common -b android-9.0 device/qcom/common
+
+*FOX:
+sudo apt update && sudo apt upgrade -y
+repo init -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+
+repo sync -j8 --force-sync
+
+source build/envsetup.sh && lunch omni_daisy-eng && mka recoveryimage
+
+
+*Sources:
+https://gitlab.com/OrangeFox/Manifest
+https://gitlab.com/OrangeFox/vendor/recovery/-/blob/master/orangefox_build_vars.txt
+https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+https://github.com/SebaUbuntu/TWRP-device-tree-generator/wiki/3.-Build-TWRP-from-source
+https://github.com/TwrpBuilder/twrpbuilder_tree_generator/wiki
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+########MY SETUP##########
+nano ~/.bashrc
+source ~/.bashrc
+
+# /usr/bin/ccache -M 50G
+ccache -M 50G
+
+export USE_CCACHE=1
+export KBUILD_BUILD_USER=TogoFire
+export KBUILD_BUILD_HOST=mint-os
+export OUT_DIR=/out
+export SELINUX_IGNORE_NEVERALLOWS=true
+export _JAVA_OPTIONS=-Xmx8g
+export SKIP_ABI_CHECKS=true
+export WITHOUT_CHECK_API=true
+export SKIP_BOOT_JARS_CHECK=true
+export SELINUX_IGNORE_NEVERALLOWS_ON_USER=true
+
+
+# FOR BUILD TWRP FOX
+export FOX_USE_BASH_SHELL=1
+export FOX_ASH_IS_BASH=1
+export FOX_USE_NANO_EDITOR=1
+export OF_AB_DEVICE=1
+export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
+export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES="1"
+export OF_USE_MAGISKBOOT="1"
+export ALLOW_MISSING_DEPENDENCIES=true
+export FOX_BUILD_TYPE=Stable
+export OF_MAINTAINER=TogoFire
+export FOX_VERSION=R11.0
+export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
+export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
+export FOX_R11=1
+export OF_USE_TWRP_SAR_DETECT=1
+export OF_STATUS_INDENT_LEFT=48
+export OF_STATUS_INDENT_RIGHT=48
+export OF_SCREEN_H=2280
+export OF_CLOCK_POS=1
+export OF_STATUS_H=95
+export OF_USE_GREEN_LED=0
+export OF_DONT_KEEP_LOG_HISTORY=1
+export FOX_BUGGED_AOSP_ARB_WORKAROUND="1451606400"

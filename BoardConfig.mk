@@ -120,3 +120,5 @@ RECOVERY_INSTALLER_PATH := $(LOCAL_PATH)/installer
 # TWRP Debug Flags
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
+
+PB_TORCH_PATH := /sys/class/leds/flashlight

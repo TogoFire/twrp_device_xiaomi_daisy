@@ -14,13 +14,14 @@
 # limitations under the License.
 #
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
+$(call inherit-product, device/xiaomi/daisy/device.mk)
+
+$(call inherit-product, vendor/pb/config/common.mk)
 
 $(call inherit-product, build/target/product/embedded.mk)
-
-# Inherit from device configuration
-$(call inherit-product, device/xiaomi/daisy/device.mk)
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
@@ -30,8 +31,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.bootctrl=$(TARGET_BOARD_PLATFORM)
 
 ## Device identifier. This must come after all inclusions
+BOARD_VENDOR := Xiaomi
 PRODUCT_DEVICE := daisy
 PRODUCT_NAME := omni_daisy
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A2 Lite
 PRODUCT_MANUFACTURER := Xiaomi
+TARGET_VENDOR := Xiaomi

@@ -6,8 +6,8 @@ jobs:
    steps:
       - run:
           command: |
-            git clone https://github.com/LinkBoi00/ci-twrp-daisy-files ~/TWRP-9
-            cd ~/TWRP-9 && bash build-twrp-circleci.sh
+            git clone https://github.com/LinkBoi00/ci-twrp-daisy-files -b pbrp-3.x ~/PBRP-9
+            cd ~/PBRP-9 && bash build-twrp-circleci.sh
       - store_artifacts:
           path: ~/final/ 
 workflows:

@@ -115,10 +115,6 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT)/lib64/android.hidl.base@1.0.so
 
-# Recovery Installer
-USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := $(LOCAL_PATH)/installer
-
 # TWRP Debug Flags
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true

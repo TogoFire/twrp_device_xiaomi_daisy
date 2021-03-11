@@ -72,6 +72,19 @@ done;
 ui_print " ";
 ui_print "Image patching complete!";
 
+ui_print " ";
+ui_print "Making TWRP persistent...";
+umount /system_root;
+mount /system_root;
+mkdir -p /system_root/system/addon.d;
+cp -f $tmp/98-twrp_ab.sh /system_root/system/addon.d;
+chmod 755 /system_root/system/addon.d/98-twrp_ab.sh;
+if [ ! -f /data/adb/magisk/magiskboot ]; then
+  ui_print " ";
+  ui_print "Please flash Magisk to make TWRP addon.d work";
+fi
+umount /system_root;
+
 cd /;
 rm -rf /dev/tmp;
 

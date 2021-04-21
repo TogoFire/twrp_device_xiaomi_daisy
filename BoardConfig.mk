@@ -46,6 +46,7 @@ TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 
 PLATFORM_VERSION := 16.1.0
 PLATFORM_SECURITY_PATCH := 2099-12-31
+VENDOR_SECURITY_PATCH := 2099-12-31
 
 # GPT Utils
 BOARD_PROVIDES_GPTUTILS := true
@@ -67,7 +68,6 @@ TARGET_KERNEL_CONFIG := daisy-fox_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/daisy
 else
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
-#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/newkernel/Image.gz-dtb
 PRODUCT_COPY_FILES += \
     $(TARGET_PREBUILT_KERNEL):kernel
 endif

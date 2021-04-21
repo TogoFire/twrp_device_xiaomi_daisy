@@ -1,37 +1,50 @@
-Copyright (C) 2020 The LineageOS Project
- 
-The Mi A2 Lite (codenamed _"daisy"_) smartphone from Xiaomi.
-
-The Xiaomi Mi A2 Lite was announced and released in July 2018.
+# Device Tree for Xiaomi Mi A2 Lite (codenamed _"daisy"_)
 
 ## Device specifications
 
-| Device       | Xiaomi Mi A2 Lite                               |
-| -----------: | :---------------------------------------------- |
-| SoC          | Qualcomm MSM8953 Snapdragon 625                 |
-| CPU          | Octa-core 2.0 GHz Cortex-A53                    |
-| GPU          | Adreno 506                                      |
-| Memory       | 3/4 GB                                          |
-| Shipped Android version | 8.1.0                                |
-| Storage      | 32/64 GB                                        |
-| Battery      | Non-removable Li-Po 4000 mAh                    |
-| Dimensions   | 149.3 x 71.7 x 8.8 mm                           |
-| Display      | 1080 x 2280 pixels (~432 ppi)                   |
+| Feature                 | Specification                     |
+| :---------------------- | :-------------------------------- |
+| CPU                     | Octa-core 2.0 GHz Cortex-A53      |
+| Chipset                 | Qualcomm MSM8953 Snapdragon 625   |
+| GPU                     | Adreno 506                        |
+| Memory                  | 3/4 GB                            |
+| Shipped Android Version | 8.1.0, Android One                |
+| Storage                 | 32/64 GB                          |
+| MicroSD                 | Up to 256 GB                      |
+| Battery      		  | Non-removable Li-Po 4000 mAh      |
+| Dimensions              | 149.3 x 71.7 x 8.8 mm             |
+| Display      		  | 1080 x 2280 pixels (~432 ppi)     |
+| Display Size 		  | 5.84 inches, 85.1 cm2             |
+| Rear Camera             | 12 MP, LED flash                  |
+| Front Camera            | 5 MP                              |
+| Release Date            | July 2018                         |
 
-Working:
-- Touch, screen
-- Flashing ZIP files (including A/B zips like ROMs)
-- Installing IMG files to respective partitions
-- Backup, restore to Internal Storage, Micro SD Card, USB OTG
-- Shutdown, Reboot to System, Recovery, Fastboot
-- Micro SD card 
-- ADB, MTP
-- Date, Time, Temperature, battery reading
-- Decryption (Keymaster 3.0) 
-
-Broken:
-- Nothing except decryption in ROMs using keymaster 4.0
-
-## Device picture
+## Device Picture
 
 ![Xiaomi Mi A2 Lite](https://i01.appmifile.com/webfile/globalimg/products/pc/D1S/black_phone.png "Xiaomi Mi A2 Lite in black")
+
+##
+Kernel source: "https://github.com/LinkBoi00/twrp_kernel_xiaomi_daisy.git"
+
+### Copyright
+ ```
+  /*
+  *  Copyright (C) 2020 The LineageOS Project
+  *
+  *  Copyright (C) 2021 The OrangeFox Recovery Project
+  *
+  * This program is free software: you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation, either version 3 of the License, or
+  * (at your option) any later version.
+  *
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  * GNU General Public License for more details.
+  *
+  * You should have received a copy of the GNU General Public License
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  *
+  */
+  ```

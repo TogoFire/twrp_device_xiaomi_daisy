@@ -67,7 +67,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
         # -- add settings for R11 --
         export FOX_R11=1
-        export OF_QUICK_BACKUP_LIST="/boot;/data;"
+        export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
         # -- end R11 settings --
 
 	# run a process after formatting data to work-around MTP issues

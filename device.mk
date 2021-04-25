@@ -1,8 +1,6 @@
 #
 # Copyright (C) 2017 The Android Open Source Project
 #
-# Copyright (C) 2021 OrangeFox Recovery Project
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -51,13 +49,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libcutils \
     libgptutils \
     libz
-
-# use twrp-common for decryption
-BOARD_USES_QCOM_FBE_DECRYPTION := true
-
-PRODUCT_PACKAGES_ENG += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
 
 # Update engine
 PRODUCT_PACKAGES += \

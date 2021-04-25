@@ -25,4 +25,5 @@
 # Removable storage
 /usb_otg         auto              /dev/block/sda1         /dev/block/sda  	flags=removable;storage;display="USB-Storage"
 /sdcard1     	 vfat              /dev/block/mmcblk1p1    /dev/block/mmcblk1   flags=removable;storage;display="MicroSD";wipeingui
+
 #

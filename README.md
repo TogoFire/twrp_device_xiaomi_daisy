@@ -24,7 +24,7 @@
 ![Xiaomi Mi A2 Lite](https://i01.appmifile.com/webfile/globalimg/products/pc/D1S/black_phone.png "Xiaomi Mi A2 Lite in black")
 
 ##
-Kernel source: "https://github.com/LinkBoi00/twrp_kernel_xiaomi_daisy.git"
+Kernel source: "https://github.com/TWRP-Mi-A2-Lite/twrp_kernel_xiaomi_daisy"
 
 ### Copyright
  ```

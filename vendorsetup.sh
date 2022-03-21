@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2021 The OrangeFox Recovery Project
+# 	Copyright (C) 2021-2022 The OrangeFox Recovery Project
 #
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -18,7 +18,6 @@
 # 	Please maintain this if you use this script or any part of it
 #
 FDEVICE="daisy"
-#set -o xtrace
 
 fox_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
@@ -56,8 +55,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
    	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800"; # Tue Nov 14 15:20:00 GMT 2017
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
 	export OF_USE_SYSTEM_FINGERPRINT="1"
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-21.4.zip
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-23.0.zip
 	export OF_USE_GREEN_LED=0
+	export OF_HIDE_NOTCH=1
+	export OF_CLOCK_POS=1
 
 	# MIUI
 	export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
@@ -89,8 +90,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
   	   export | grep "PLATFORM_" >> $FOX_BUILD_LOG_FILE
   	fi
 
-	add_lunch_combo omni_"$FDEVICE"-eng
-	add_lunch_combo omni_"$FDEVICE"-user
-	add_lunch_combo omni_"$FDEVICE"-userdebug
+  	for var in eng user userdebug; do
+  		add_lunch_combo omni_"$FDEVICE"-$var
+  	done
 fi
 #

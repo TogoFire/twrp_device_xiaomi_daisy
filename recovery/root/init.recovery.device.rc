@@ -1,3 +1,7 @@
+# Boot control
+on boot
+    start boot-hal-1-1
+
 # DT2W
 on init
     write /proc/touchpanel/enable_dt2w 1

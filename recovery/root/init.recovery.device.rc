@@ -2,6 +2,10 @@
 on boot
     start boot-hal-1-1
 
+# Decryption
+on init
+    exec u:r:recovery:s0 -- /system/bin/detect-fbe.sh
+
 # DT2W
 on init
     write /proc/touchpanel/enable_dt2w 1

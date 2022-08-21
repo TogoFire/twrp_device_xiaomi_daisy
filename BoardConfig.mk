@@ -13,6 +13,7 @@ DEVICE_PATH := device/xiaomi/tissot
 TARGET_PREBUILT_KERNEL := device/xiaomi/kernel-mithorium/tissot/Image.gz-dtb
 
 # Partitions
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_USES_METADATA_PARTITION := true
 
 # Recovery

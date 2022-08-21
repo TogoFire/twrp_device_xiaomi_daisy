@@ -3,9 +3,6 @@
 # Boot
 /boot           emmc    /dev/block/bootdevice/by-name/boot                      flags=slotselect
 
-# Cache
-/cache          ext4    /dev/block/bootdevice/by-name/cache                     flags=fsflags="discard"
-
 # Data
 /data           ext4    /dev/block/bootdevice/by-name/userdata                  flags=encryptable=footer;fsflags="discard"
 /metadata       ext4    /dev/block/bootdevice/by-name/logdump                   flags=display="Metadata";fsflags="discard"

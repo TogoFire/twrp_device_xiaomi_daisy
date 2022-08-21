@@ -1,1 +1,1 @@
-# Device Tree for Xiaomi UTER (uter)
+# Device Tree for Xiaomi Mi A1 (tissot)

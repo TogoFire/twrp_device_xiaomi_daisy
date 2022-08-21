@@ -20,6 +20,7 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 
 # Kernel
+BOARD_KERNEL_CMDLINE += veritykeyid=id:
 TARGET_PREBUILT_KERNEL := device/xiaomi/kernel-mithorium/tissot/Image.gz-dtb
 
 # Partitions

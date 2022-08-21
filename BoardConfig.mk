@@ -9,6 +9,12 @@ include device/xiaomi/mithorium-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/tissot
 
+# A/B
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS := \
+  boot \
+  system
+
 # Bootloader
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true

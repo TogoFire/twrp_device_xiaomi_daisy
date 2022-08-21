@@ -1,7 +1,3 @@
 # DT2W
 on init
     write /proc/touchpanel/enable_dt2w 1
-
-# Fstab
-on init
-    exec u:r:recovery:s0 -- /system/bin/merge-fstab.sh

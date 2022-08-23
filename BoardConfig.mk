@@ -16,8 +16,8 @@ AB_OTA_PARTITIONS := \
   system
 
 # Bootloader
-BOARD_USES_RECOVERY_AS_BOOT := true
-TARGET_NO_RECOVERY := true
+#BOARD_USES_RECOVERY_AS_BOOT := true
+#TARGET_NO_RECOVERY := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE += veritykeyid=id:

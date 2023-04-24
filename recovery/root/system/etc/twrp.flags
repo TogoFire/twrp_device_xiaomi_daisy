@@ -3,9 +3,15 @@
 # Boot
 /boot           emmc    /dev/block/bootdevice/by-name/boot                      flags=slotselect
 
-# Data
-/data           ext4    /dev/block/bootdevice/by-name/userdata                  flags=encryptable=footer;fsflags="discard"
-/metadata       ext4    /dev/block/bootdevice/by-name/logdump                   flags=display="Metadata";fsflags="discard"
+# System
+/system_root    ext4    /dev/block/bootdevice/by-name/system                    flags=display="System";fsflags="discard";slotselect;wipeingui
+/system_image   emmc    /dev/block/bootdevice/by-name/system                    flags=display="System_Image";backup=1;flashimg=1;slotselect
+
+# Vendor
+/vendor    	ext4    /dev/block/bootdevice/by-name/vendor                    flags=display="Vendor";fsflags="discard";slotselect;wipeingui
+/vendor_image  	emmc    /dev/block/bootdevice/by-name/vendor                    flags=display="Vendor_Image";backup=1;flashimg=1;slotselect
+
+/storage        ext4      /data/media/0                  		     	flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
 
 # Modem
 /firmware       vfat    /dev/block/bootdevice/by-name/modem                     flags=display="Firmware";fsflags="ro";mounttodecrypt
@@ -19,15 +25,11 @@
 /efsg           emmc    /dev/block/bootdevice/by-name/fsg                       flags=backup=1;subpartitionof=/efs1
 
 # Persist
-/persist        ext4    /dev/block/bootdevice/by-name/persist                   flags=display="Persist";fsflags="ro"
-/persist_image  emmc    /dev/block/bootdevice/by-name/persist                   flags=display="Persist";backup=1;flashimg=1
+/persist_image  emmc     /dev/block/bootdevice/by-name/persist              	flags=display="Persist Image";backup=1;flashimg=1
+/persist        ext4     /dev/block/bootdevice/by-name/persist              	flags=display="Persist";backup=0
 
 # Splash
 /splash         emmc    /dev/block/bootdevice/by-name/splash                    flags=display="Splash";backup=1;flashimg=1
-
-# System
-/system_root    ext4    /dev/block/bootdevice/by-name/system                    flags=display="System";fsflags="discard";slotselect;wipeingui
-/system_image   emmc    /dev/block/bootdevice/by-name/system                    flags=display="System";backup=1;flashimg=1;slotselect
 
 # Removable storage
 /sdcard1        auto    /dev/block/mmcblk1p1                                    flags=display="MicroSD";removable;storage;wipeingui

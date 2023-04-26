@@ -8,6 +8,7 @@
 
 # enable ext4
 TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Inherit from common mithorium-common
 include device/xiaomi/mithorium-common/BoardConfigCommon.mk
@@ -29,7 +30,6 @@ TARGET_NO_RECOVERY := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE += veritykeyid=id:
-#KERNEL_DIR := $(DEVICE_PATH)/newkernel-sleepy
 KERNEL_DIR := $(DEVICE_PATH)/prebuilt
 TARGET_PREBUILT_KERNEL := $(KERNEL_DIR)/Image.gz-dtb
 

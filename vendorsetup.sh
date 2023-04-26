@@ -55,6 +55,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_UNBIND_SDCARD_F2FS=1
 	export OF_USE_GREEN_LED=0
 
+	# don't try FBE decryption with A13
+	export OF_SKIP_FBE_DECRYPTION_SDKVERSION=33
+
 	# screen
         export OF_SCREEN_H=2280
         export OF_STATUS_H=95

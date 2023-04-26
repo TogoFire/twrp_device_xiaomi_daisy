@@ -2,10 +2,6 @@
 on boot
     start boot-hal-1-1
 
-# Decryption
-on init
-    exec u:r:recovery:s0 -- /system/bin/detect-fbe.sh
-
 # DT2W
 on init
     write /proc/touchpanel/enable_dt2w 1
@@ -19,7 +15,4 @@ service hvdcp_opti /system/bin/hvdcp_opti
 
 on boot
     start hvdcp_opti
-
-# Workaround timestamp check
-on init
-    exec u:r:recovery:s0 -- /system/bin/workaround-timestamp-check.sh
+#
